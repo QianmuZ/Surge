@@ -1,0 +1,5 @@
+[Script]
+彩云天气= type=http-response,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/litieyin/AD_VIP/main/Script/caiyun.js,script-update-interval=-1,pattern=^https:\//biz.caiyunapp.com\/v2\/user\?app_name=weather
+
+[MITM]
+hostname = %APPEND% biz.caiyunapp.com
