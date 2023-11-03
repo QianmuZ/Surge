@@ -1,3 +1,7 @@
+#!name=自用汇聚
+
+#!desc=自用汇聚
+
 [MITM]
 hostname = %APPEND% mp.weixin.qq.com, *.cyapi.cn, *.caiyunapp.com, adx.sogaha.cn, mb3admin.com, pan.baidu.com, *.kakamobi.cn, subscription-api.notedapp.io
 
