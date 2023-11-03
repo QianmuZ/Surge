@@ -1,0 +1,35 @@
+[MITM]
+hostname = %APPEND% mp.weixin.qq.com, *.cyapi.cn, *.caiyunapp.com, adx.sogaha.cn, mb3admin.com, pan.baidu.com, *.kakamobi.cn, subscription-api.notedapp.io
+
+[URL Rewrite]
+# 彩云天气去广告
+^https?:\/\/ad\.(caiyunapp|cyapi)\.(cn|com) - reject
+
+[Map Local]
+# 彩云天气去广告
+^http:\/\/adx\.sogaha\.cn\/sdk\/ad\/get data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-200.txt"
+
+[Script]
+# 彩云天气
+# hostname = *.cyapi.cn, *.caiyunapp.com, adx.sogaha.cn
+彩云天气-SVIP会员 = type=http-response,pattern=^https?:\/\/(biz|wrapper|starplucker)\.(cyapi|caiyunapp)\.(cn|com)\/(.+\/(user\?app_name|activity\?app_name|visitors|operation\/banners)|p\/v\d\/(vip_info|user_info)),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/caiyuntianqi.js
+彩云天气-SVIP地图 = type=http-request,pattern=^https?:\/\/(api|wrapper)\.(cyapi|caiyunapp)\.(cn|com)\/v\d\/(satellite|nafp\/origin_images),requires-body=0,max-size=0,script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/caiyuntianqi.js
+
+# Emby(解锁播放权限)
+# hostname = mb3admin.com
+Emby解锁播放权限 = type=http-request,pattern=^https?:\/\/mb3admin\.com\/admin\/service(\/registration\/validateDevice|\/appstore\/register|\/registration\/validate|\/registration\/getStatus|\/supporter\/retrievekey),requires-body=0,max-size=0,script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/embycrack.js
+
+# 百度网盘_在线视频倍率/清晰度
+# hostname = pan.baidu.com
+百度网盘 = type=http-response,pattern=^https?:\/\/pan\.baidu\.com\/(youai\/(user\/.+\/getminfo|membership\/.+\/adswitch)|(rest\/.+\/membership\/user|act\/.+\/(bchannel|welfare)\/list|api\/usercfg)),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/bdcloud.js
+
+#************************************#
+# 驾考宝典
+# hostname = *.kakamobi.cn
+驾考宝典 = type=http-response,pattern=^https?:\/\/.*\.kakamobi\.cn\/api\/open,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/jiakaobaodian.js
+
+# Noted录音笔记软件
+# hostname = subscription-api.notedapp.io
+Noted = type=http-response,pattern=^https:\/\/subscription-api\.notedapp\.io\/api\/verifyReceipt,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Noted.js
+
+微信公众号去广告=type=http-response,pattern=^https?:\/\/mp\.weixin\.qq\.com/mp/getappmsgad  ,requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/Wechat.js
