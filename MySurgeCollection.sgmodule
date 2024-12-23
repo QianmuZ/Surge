@@ -17,13 +17,13 @@ DOMAIN,stun1.qvb.qcloud.com,REJECT,extended-matching,pre-matching
 
 [Script]
 # 首页轮播图和视频流广告
-body_rewrite_1 = type=http-response,script-path=https://raw.githubusercontent.com/Mortal0110/iOS_Rules/refs/heads/main/Script/Douyu_remove_ads.js,pattern=^https:\/\/apiv2\.douyucdn\.cn\/mgapi\/livenc\/home\/getRecV3
+body_rewrite_1 = type=http-response,script-path=https://raw.githubusercontent.com/Mortal0110/iOS_Rules/refs/heads/main/Script/Douyu_remove_ads.js,pattern=^https:\/\/apiv2\.douyucdn\.cn\/mgapi\/livenc\/home\/getRecV3,requires-body=true
 
 # 首页直播间悬浮窗
-body_rewrite_3 = type=http-response,script-path=https://raw.githubusercontent.com/Mortal0110/iOS_Rules/refs/heads/main/Script/Douyu_remove_ads.js,pattern=^https:\/\/apiv2\.douyucdn\.cn\/japi\/entrance\/roomRes\/nc\/m\/list
+body_rewrite_3 = type=http-response,script-path=https://raw.githubusercontent.com/Mortal0110/iOS_Rules/refs/heads/main/Script/Douyu_remove_ads.js,pattern=^https:\/\/apiv2\.douyucdn\.cn\/japi\/entrance\/roomRes\/nc\/m\/list,requires-body=true
 
 # 修改应用配置
-body_rewrite_4 = type=http-response,script-path=https://raw.githubusercontent.com/Mortal0110/iOS_Rules/refs/heads/main/Script/Douyu_remove_ads.js,pattern=^https:\/\/venus\.douyucdn\.cn\/venus\/config\/static\/update.+keyCodeSet=flow_config
+body_rewrite_4 = type=http-response,script-path=https://raw.githubusercontent.com/Mortal0110/iOS_Rules/refs/heads/main/Script/Douyu_remove_ads.js,pattern=^https:\/\/venus\.douyucdn\.cn\/venus\/config\/static\/update.+keyCodeSet=flow_config,requires-body=true
 
 [MITM]
 hostname = %APPEND% rtbapi.douyucdn.cn, apiv2.douyucdn.cn, venus.douyucdn.cn
