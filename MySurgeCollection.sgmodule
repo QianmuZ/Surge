@@ -12,9 +12,8 @@ AND,((DEST-PORT,18000),(PROTOCOL,STUN)),REJECT
 DOMAIN,stun1.douyucdn.cn,REJECT,extended-matching,pre-matching
 DOMAIN,stun1.qvb.qcloud.com,REJECT,extended-matching,pre-matching
 
-[URL Rewrite]
-# 开屏广告
-^https:\/\/rtbapi\.douyucdn\.cn\/japi\/sign\/app\/getinfo reject-dict
+[Map Local]
+^https:\/\/rtbapi\.douyucdn\.cn\/japi\/sign\/app\/getinfo data-type=text data="{}" status-code=200
 
 [Script]
 # 首页轮播图和视频流广告
