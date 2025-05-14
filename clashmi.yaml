@@ -179,6 +179,8 @@ rules:
   - RULE-SET,ProxyLite,全球加速
   - RULE-SET,ChinaIP,DIRECT
   - RULE-SET,ChinaMax,DIRECT
+  - RULE-SET,ChinaMax_Domain,DIRECT
+  - RULE-SET,ChinaMax_IP,DIRECT  
   - RULE-SET,Direct,DIRECT
   - RULE-SET,Lan,DIRECT
   - RULE-SET,Download,DIRECT
