@@ -157,7 +157,10 @@ rule-providers:
   Lan:         {behavior: classical, interval: 86400, format: yaml, type: http, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.yaml ,                            path: ./ruleset/Lan.yaml          }
   Download:    {behavior: classical, interval: 86400, format: yaml, type: http, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Download/Download.yaml ,                  path: ./ruleset/Download.yaml     }
   ChinaIP:     {behavior: ipcidr,    interval: 86400, format: yaml, type: http, url: https://raw.githubusercontent.com/soffchen/GeoIP2-CN/release/clash-rule-provider.yml ,                                     path: ./ruleset/ChinaIP.yaml      }
-  ChinaMax:      {behavior: classical, interval: 86400, format: yaml, type: http, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/ChinaMax/ChinaMax.yaml         path: ./ruleset/ChinaMax.yaml        
+  ChinaMax:    {behavior: classical, interval: 86400, format: yaml, type: http, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/ChinaMax/ChinaMax.yaml ,       path: ./ruleset/ChinaMax.yaml     }
+  ChinaMax_Domain:    {behavior: domain, interval: 86400, format: yaml, type: http, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/ChinaMax/ChinaMax_Domain.yaml ,       path: ./ruleset/ChinaMax_Domain.yaml     }
+  ChinaMax_IP: {behavior: ipcidr, interval: 86400, format: yaml, type: http, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/ChinaMax/ChinaMax_IP.yaml ,       path: ./ruleset/ChinaMax_IP.yaml  }
+
 # 分流Policy 
 rules:
   - RULE-SET,AdBlock,AdBlock
